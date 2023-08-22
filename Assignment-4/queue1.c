@@ -26,7 +26,7 @@ queue createIntegerQueue(int queueSize) {
 
 int enqueueInteger(queue q, int d) {
     if ((q->rear + 1) % q->size == q->front) {
-        return 0;  // Queue is full
+        return 0;
     }
     q->data[q->rear] = d;
     q->rear = (q->rear + 1) % q->size;
@@ -35,7 +35,7 @@ int enqueueInteger(queue q, int d) {
 
 int dequeueInteger(queue q, int *dp) {
     if (q->front == q->rear) {
-        return 0;  // Queue is empty
+        return 0;
     }
     *dp = q->data[q->front];
     q->front = (q->front + 1) % q->size;
@@ -44,7 +44,7 @@ int dequeueInteger(queue q, int *dp) {
 
 int freeIntegerQueue(queue q) {
     if (q == NULL) {
-        return 0;  // Invalid queue
+        return 0;
     }
     free(q->data);
     free(q);
