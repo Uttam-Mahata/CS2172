@@ -1,6 +1,6 @@
-# CS2171 - Data Structures Laboratory
+# CS2172 - Data Structures Laboratory
 
-Welcome to the **CS2171** repository! This repository is dedicated to storing the code assignments and projects completed during the Data Structures Laboratory course. Here, you'll find a collection of code written by me to fulfill the requirements of the course assignments.
+Welcome to the **CS2172** repository! This repository is dedicated to storing the code assignments and projects completed during the Data Structures Laboratory course. Here, you'll find a collection of code written by me to fulfill the requirements of the course assignments.
 
 ## Table of Contents
 
@@ -22,6 +22,6 @@ The repository is structured in a way that each assignment or project will have 
 To access the code and materials in this repository, you can either clone the repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/your-username/CS2171.git
+git clone https://github.com/your-username/CS2172.git
 
 
