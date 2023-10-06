@@ -1,6 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "linked_list.h"
+// #include "linked_list.h"
+
+
+struct intNode {
+    int element;
+    struct intNode* next;
+};
+// Function Prototypes
+struct intNode* addIntNodeSorted(struct intNode*, int elem);
+int isPresentIntNodeSorted(struct intNode*, int elem);
+struct intNode* deleteIntNodeSorted(struct intNode*, int elem);
+void printLL(struct intNode*);
+
+
 
 struct intNode* addIntNodeSorted(struct intNode* start, int elem) {
     struct intNode* newNode = (struct intNode*)malloc(sizeof(struct intNode));
@@ -95,7 +108,8 @@ int main() {
     // start = addIntNodeSorted(start, 12);
     // start = addIntNodeSorted(start, 5);
     // start = addIntNodeSorted(start, 11);
-    // start = addIntNodeSorted(start, 2);
+    // start = addIntNodeSorted(start, 2); 
+    printf("Sorted Linked List:\n");
 
     printLL(start);
 
@@ -118,4 +132,6 @@ int main() {
     printLL(start);
 
     return 0;
+
+
 }

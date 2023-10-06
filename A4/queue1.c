@@ -33,11 +33,11 @@ int enqueueInteger(queue q, int d) {
     return 1;
 }
 
-int dequeueInteger(queue q, int *dp) {
+int dequeueInteger(queue q, int *dptr) {
     if (q->front == q->rear) {
         return 0;
     }
-    *dp = q->data[q->front];
+    *dptr = q->data[q->front];
     q->front = (q->front + 1) % q->size;
     return 1;
 }
@@ -60,7 +60,12 @@ int isIntegerQueueEmpty(queue q) {
 }
 
 int main() {
-    queue q = createIntegerQueue(5);
+int arrSize;
+int elem[arrSize];
+printf("Enter the number of  integers to be enqueued: \n");
+scanf("%d",&arrSize);
+
+    queue q = createIntegerQueue(arrSize);
     if (q == NULL) {
         printf("Queue creation failed.\n");
         return 1;
@@ -69,13 +74,29 @@ int main() {
     printf("Is queue empty: %s\n", isIntegerQueueEmpty(q) ? "Yes" : "No");
     printf("Is queue full: %s\n", isIntegerQueueFull(q) ? "Yes" : "No");
 
+    /*enqueueInteger(q, 11);
+    enqueueInteger(q, 12);
     enqueueInteger(q, 10);
-    enqueueInteger(q, 20);
-    enqueueInteger(q, 30);
+    enqueueInteger(q, 20);*/
 
-    int value;
-    if (dequeueInteger(q, &value)) {
-        printf("Dequeued: %d\n", value);
+    printf("Enter the value integers to be enqueued:\n");
+    for(int i=0;i<arrSize;i++) {
+    scanf("%d",&elem[i]);
+
+}
+ for(int i=0;i<arrSize;i++) {
+    enqueueInteger(q,elem[i]);
+
+}
+
+
+
+
+
+
+    int val;
+    if (dequeueInteger(q, &val)) {
+        printf("Dequeued: %d\n", val);
     }
 
     printf("Is queue empty: %s\n", isIntegerQueueEmpty(q) ? "Yes" : "No");

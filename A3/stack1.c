@@ -1,4 +1,3 @@
- 
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -34,12 +33,12 @@ int pushIntegerStack(Stack* s, int d) {
     return 1;
 }
 
-int popIntegerStack(Stack* s, int* dp) {
+int popIntegerStack(Stack* s, int* dptr) {
     if (s->top == -1) {
         return 0;
     }
 
-    *dp = s->data[s->top--];
+    *dptr = s->data[s->top--];
     return 1;
 }
 
@@ -79,9 +78,9 @@ int main() {
     }
 
     printf("\nPopping elements from the stack:\n");
-    int poppedValue;
-    while (popIntegerStack(myStack, &poppedValue)) {
-        printf("Popped: %d\n", poppedValue);
+    int poppedVal;
+    while (popIntegerStack(myStack, &poppedVal)) {
+        printf("Popped: %d\n", poppedVal);
     }
 
     if (isIntegerStackEmpty(myStack)) {

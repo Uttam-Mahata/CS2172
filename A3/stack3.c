@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -34,12 +33,12 @@ int pushCharStack(Stack* s, char c) {
     return 1;
 }
 
-int popCharStack(Stack* s, char* cp) {
+int popCharStack(Stack* s, char* cptr) {
     if (s->top == -1) {
         return 0;
     }
 
-    *cp = s->data[s->top--];
+    *cptr = s->data[s->top--];
     return 1;
 }
 

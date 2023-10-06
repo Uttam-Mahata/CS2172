@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -34,12 +33,12 @@ int pushIntegerStack(Stack* s, int d) {
     return 1;
 }
 
-int popIntegerStack(Stack* s, int* dp) {
+int popIntegerStack(Stack* s, int* dptr) {
     if (s->top == -1) {
         return 0;
     }
 
-    *dp = s->data[s->top--];
+    *dptr = s->data[s->top--];
     return 1;
 }
 
@@ -71,30 +70,30 @@ int main() {
     }
 
     printf("Pushing elements onto the stacks:\n");
-    int inputValue;
+    int inputVal;
     while (1) {
         if (!isIntegerStackFull(stack1)) {
             printf("Enter an integer: ");
-            if (scanf("%d", &inputValue) != 1) {
+            if (scanf("%d", &inputVal) != 1) {
                 printf("Invalid input.\n");
                 break;
             }
 
-            if (!pushIntegerStack(stack1, inputValue)) {
-                if (!pushIntegerStack(stack2, inputValue)) {
+            if (!pushIntegerStack(stack1, inputVal)) {
+                if (!pushIntegerStack(stack2, inputVal)) {
                     printf("Both stacks are full. Stopping input.\n");
                     break;
                 }
             }
         } else if (!isIntegerStackFull(stack2)) {
             printf("Enter an integer: ");
-            if (scanf("%d", &inputValue) != 1) {
+            if (scanf("%d", &inputVal) != 1) {
                 printf("Invalid input.\n");
                 break;
             }
 
-            if (!pushIntegerStack(stack2, inputValue)) {
-                printf("Stack2 is full. Stopping input.\n");
+            if (!pushIntegerStack(stack2, inputVal)) {
+                printf("Stack 2 is full. Stopping input.\n");
                 break;
             }
         } else {
@@ -103,23 +102,23 @@ int main() {
         }
     }
 
-    printf("\nPopping elements from stack2:\n");
-    int poppedValue;
-    while (popIntegerStack(stack2, &poppedValue)) {
-        printf("Popped from stack2: %d\n", poppedValue);
+    printf("\nPopping elements from stack 2:\n");
+    int poppedVal;
+    while (popIntegerStack(stack2, &poppedVal)) {
+        printf("Popped from stack 2: %d\n", poppedVal);
     }
 
-    printf("\nPopping elements from stack1:\n");
-    while (popIntegerStack(stack1, &poppedValue)) {
-        printf("Popped from stack1: %d\n", poppedValue);
+    printf("\nPopping elements from stack 1:\n");
+    while (popIntegerStack(stack1, &poppedVal)) {
+        printf("Popped from stack 1: %d\n", poppedVal);
     }
 
     if (isIntegerStackEmpty(stack1)) {
-        printf("Stack1 is empty.\n");
+        printf("Stack 1 is empty.\n");
     }
 
     if (isIntegerStackEmpty(stack2)) {
-        printf("Stack2 is empty.\n");
+        printf("Stack 2 is empty.\n");
     }
 
     freeIntegerStack(stack1);

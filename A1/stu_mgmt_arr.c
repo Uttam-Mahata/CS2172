@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -30,6 +31,7 @@ int add(SReg *sr, Student s) {
     return 1;
 }
 
+
 Student get(SReg sr, int r) {
     Student notFound = {"", 0, "", ""};
     for (int i = 0; i < sr.count; i++) {
@@ -39,6 +41,7 @@ Student get(SReg sr, int r) {
     }
     return notFound;
 }
+
 
 int delete(SReg *sr, int r) {
     for (int i = 0; i < sr->count; i++) {
@@ -53,6 +56,7 @@ int delete(SReg *sr, int r) {
     return 0;
 }
 
+
 int modify(SReg *sr, Student s) {
     for (int i = 0; i < sr->count; i++) {
         if (sr->students[i].roll == s.roll) {
@@ -62,6 +66,7 @@ int modify(SReg *sr, Student s) {
     }
     return 0;
 }
+
 
 void sortStudents(SReg *sr) {
     for (int i = 0; i < sr->count - 1; i++) {
@@ -93,7 +98,7 @@ void export(SReg sr, const char *fname) {
     fclose(file);
 
 }
-// load file
+
 void load(SReg *sr, const char *fname) {
     FILE *file = fopen(fname, "r");
     if (file == NULL) {
@@ -232,3 +237,4 @@ int main() {
 
     return 0;
 }
+
